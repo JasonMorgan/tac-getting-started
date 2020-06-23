@@ -10,4 +10,8 @@ k port-forward svc/kubeapps 8080:80
 ## Create new namespace
 ## Deploy harbor
 ### Name internal-registry
+### Swap to ClusterIP on line 368
 ## Port forward
+
+k port-forward svc/internal-registry-harbor 8000:443
+curl -k https://localhost:8000
