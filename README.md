@@ -1,15 +1,20 @@
 # TAC Walthrough
 
-Go from a blank kubernetes cluster to an environment running Tanzu Build Service.
+Get started using Tanzu Application Catalog (TAC). We're going to walk through how to get started using the TAC helm repo locally, how to install and use kubeapps, and dig into how we could sync harbor with the tac remote repo.
 
 ## Things you'll need
 
-* A github or similar account
-  * Public facing is assumed
-  * A fork of spring-petclinic
+* A kubernetes cluster
 * A harbor instance
-  * Assumes docker hub
-* duffle installed
-* The pb cli
-* a k8s cluster
-  * with a default storage class configured
+  * We can deploy this into our kube cluster laster if you don't have one ready
+* helm 3 installed
+* kubectl
+
+## Walkthrough
+
+* Deploying some charts
+* Installing kubeapps
+* Using kubeapps
+* Sync some images to harbor
+* Build a new app off of java
+* Deploy a postgres instance and connect our app to it
