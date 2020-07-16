@@ -17,4 +17,8 @@ You can find the steps for replicating GCR to harbor [here](https://docs.bitnami
 We need the following images in order to do the next steps.
 
 * Java
-* Postgres
+  * gcr.io/sys-2b0109it/demo/bitnami/java:14-centos-7
+* git
+  * gcr.io/sys-2b0109it/demo/bitnami/git:2-centos-7
+* Mysql
+  * gcr.io/sys-2b0109it/demo/bitnami/mysql:8.0-centos-7
