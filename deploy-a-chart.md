@@ -1,7 +1,11 @@
 # Deploy some charts from TAC
 
-* First we set up the TAC repo as a target for helm
-* Then we install mariadb and wordpress
+In order to get a sense of what TAC provides we want to connect to the TAC demo repo and deploy some applications. You can get the exact steps with some comments [here](deploy-a-chart.md).
+
+Outline:
+
+* Set up the TAC repo as a target for helm
+* Install mariadb and wordpress
   * First walk through the values yaml for each chart
-  * Then override some settings so we can connect wordpress tot he maria db
-* That's it, we can checkout the svc and log into wordpress later
+  * Then override some settings so we can connect wordpress to the maria db
+* Checkout the svc and log into wordpress later
