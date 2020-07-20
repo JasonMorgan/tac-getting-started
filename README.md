@@ -16,4 +16,4 @@ Get started using Tanzu Application Catalog (TAC). We're going to walk through h
 * [Installing kubeapps](install-kubeapps.md)
 * [Sync some images to harbor](sync-to-harbor.md)
 * [Build a new app off of java](create-an-app.md)
-* Deploy a postgres instance and connect our app to it
+* [Deploy a mysql instance and connect our app to it](custom-app.md)

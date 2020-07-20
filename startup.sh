@@ -13,6 +13,6 @@ helm install kubeapps bitnami/kubeapps --set useHelm3=true --set frontend.servic
 helm delete kubeapps
 helm delete tac-wp
 helm delete tac-maria
-kubectl delete pvc -A
+kubectl delete pvc --all
 helm repo remove tac-repo
 helm repo remove bitnami

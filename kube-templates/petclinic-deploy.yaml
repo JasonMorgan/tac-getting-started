@@ -15,17 +15,30 @@ spec:
     spec:
       containers:
         - name: spring-petclinic
-          image: harbor.oxnard.cf-app.com/spring-petclinic/spring-petclinic:after
+          image: fill-me-in
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: petclinic
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-config
+                  key: mysql.password
+            - name: MYSQL_URL
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-config
+                  key: mysql.url
             - name: MYSQL_DATABASE
-              value: petclinic
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-config
+                  key: mysql.database_name
             - name: SPRING_PROFILES_ACTIVE
               value: mysql
+          command: ["java"]
+          args: ["-jar","/app/target/spring-petclinic.jar"] # , "-Dspring.profiles.active=mysql"
           resources:
             requests:
               memory: "400Mi"
