@@ -1,6 +1,6 @@
 # Install Kubeapps
 
-We want to show how to use and install the kubeapps application. 
+We want to show how to use and install the kubeapps application.
 
 The commands are looked at in more detail [here](install-kubeapps.sh) but you can find the high level overview below.
 
@@ -21,3 +21,4 @@ The commands are looked at in more detail [here](install-kubeapps.sh) but you ca
 * Add the TAC repo
   * URL: https://charts.trials.tac.bitnami.com/demo
 * Deploy an app from TAC
+  * deploy harbor

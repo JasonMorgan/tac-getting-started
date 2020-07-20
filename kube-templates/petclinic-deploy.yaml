@@ -17,6 +17,7 @@ spec:
         - name: spring-petclinic
           image: fill-me-in
           imagePullPolicy: Always
+          count: 3
           ports:
             - containerPort: 8080
           env:
@@ -26,10 +27,7 @@ spec:
                   name: mysql-config
                   key: mysql.password
             - name: MYSQL_URL
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-config
-                  key: mysql.url
+              value: mysql.svc.cluster.local
             - name: MYSQL_DATABASE
               valueFrom:
                 secretKeyRef:
