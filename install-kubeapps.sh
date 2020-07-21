@@ -16,6 +16,6 @@ kubectl create clusterrolebinding kubeapps-operator --clusterrole=cluster-admin 
 kubectl get secret $(kubectl get serviceaccount kubeapps-operator -o jsonpath='{range .secrets[*]}{.name}{"\n"}{end}' | grep kubeapps-operator-token) -o jsonpath='{.data.token}' -o go-template='{{.data.token | base64decode}}' && echo
 
 ## You only need this is you didn't use a svc type loadbalancer
-k port-forward svc/kubeapps 8080:80
+kubectl port-forward svc/kubeapps 8080:80
 
 ### Tac repo values: tac-repo        https://charts.trials.tac.bitnami.com/demo
