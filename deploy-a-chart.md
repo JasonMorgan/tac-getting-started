@@ -1,6 +1,6 @@
 # Deploy some charts from TAC
 
-In order to get a sense of what TAC provides we want to connect to the TAC demo repo and deploy some applications. You can get the exact steps with some comments [here](deploy-a-chart.md).
+In order to get a sense of what TAC provides we want to connect to the TAC demo repo and deploy some applications. You can get the exact steps with some comments [here](deploy-a-chart.sh).
 
 Outline:
 
