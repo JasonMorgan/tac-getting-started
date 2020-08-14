@@ -6,7 +6,7 @@ Get started using Tanzu Application Catalog (TAC). We're going to walk through h
 
 * A kubernetes cluster
 * A harbor instance
-  * We can deploy this into our kube cluster laster if you don't have one ready
+  * We can deploy this into our kube cluster later if you don't have one ready
 * helm 3 installed
 * kubectl
 
