@@ -31,12 +31,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mysql-config
-              key: mysql.password
+              key: password
         - name: MYSQL_DATABASE
           valueFrom:
             secretKeyRef:
               name: mysql-config
-              key: mysql.database_name
+              key: database_name
         ports:
         - containerPort: 3306
           name: mysql
