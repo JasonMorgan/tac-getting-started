@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## Add teh TAC demo repo
+## Add the TAC demo repo
 helm repo add tac-repo https://charts.trials.tac.bitnami.com/demo
 
 ## Checkout the chart values
