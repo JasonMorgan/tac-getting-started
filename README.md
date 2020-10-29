@@ -1,6 +1,8 @@
-# TAC Walthrough
+# TAC Walkthrough
 
 Get started using Tanzu Application Catalog (TAC). We're going to walk through how to get started using the TAC helm repo locally, how to install and use kubeapps, and dig into how we could sync harbor with the tac remote repo.
+
+Some scripts have been updated to use demo magic.
 
 ## Things you'll need
 
@@ -17,3 +19,4 @@ Get started using Tanzu Application Catalog (TAC). We're going to walk through h
 * [Sync some images to harbor](sync-to-harbor.md)
 * [Build a new app](create-an-app.md)
 * [Deploy a mysql instance and connect our app to it](custom-app.md)
+* [Use the tac cli](tac-cli.sh)

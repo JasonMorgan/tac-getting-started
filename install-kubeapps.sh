@@ -1,11 +1,11 @@
 #!/bin/bash
 
-## Add the bitnami repo
-helm repo add bitnami https://charts.bitnami.com/bitnami
+## Add the tac repo
+helm repo add tac-repo https://charts.trials.tac.bitnami.com/demo
 
 ## Install kubeapps for helm3 and configure it to use a load balancer
 ### You can skip the load balancer if you aren't in the HOL environment
-helm install kubeapps bitnami/kubeapps --set useHelm3=true --wait
+helm install kubeapps tac-repo/kubeapps --set useHelm3=true --wait
 
 
 ## This is vanilla kubeapps install stuff
