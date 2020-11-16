@@ -1,51 +1,66 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-petclinic
+  name: petclinic-deployment
+  labels:
+    app: petclinic
 spec:
   replicas: 3
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: spring-petclinic
+      app: petclinic
   template:
     metadata:
       labels:
-        app: spring-petclinic
+        app: petclinic
     spec:
       containers:
-        - name: spring-petclinic
-          image: jasonmorgan/pbpetclinic
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 8080
-          resources:
-            requests:
-              memory: "400Mi"
-              cpu: "100m"
-            limits:
-              memory: "600Mi"
-              cpu: "500m"
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 6
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 6
+      - name: petclinic
+        imagePullPolicy: Always
+        image:  harbor-01a.corp.local/tac/spring-petclinic
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "400Mi"
+            cpu: "100m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 6
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 6
+        startupProbe:
+          httpGet:
+            path: /
+            port: 8080
+          failureThreshold: 30
+          periodSeconds: 10
+        env: 
+          - name: spring_profiles_active
+            value: mysql
+          - name: MYSQL_URL
+            value: "jdbc:mysql://pet-db-mysql.default.svc.cluster.local/petclinic"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-petclinic
+  name: pb-frontend
 spec:
-  ports:
-  - port: 8080
-    targetPort: 8080
   selector:
-    app: spring-petclinic
+    app: petclinic
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
